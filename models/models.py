@@ -5,7 +5,7 @@ from datetime import datetime
 class OnegaiContent(Base):
     __tablename__ = "onegaicontents"
     id = Column(Integer, primary_key = True)
-    title = Column(String(128), unique=True)
+    title = Column(String(128))  # unique=Trueを削除
     body = Column(Text)
     date = Column(DateTime, default = datetime.now())
 

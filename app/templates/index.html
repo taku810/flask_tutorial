@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{name}}</title>
+    </head>
+    <body>
+        <h1>FlaskWebapp-Tutorial</h1>
+        {% if name == "server" %}
+        <h1>special sline</h1>
+        {% elif name %}
+        <h1>{{name}} sline</h1>
+        {% else %}
+        <h1>normal sline</h1>
+        {% endif %}
+        
+        <form action = "/home" method = "POST">
+            <input type = "text" name = "name" placeholder="Enter your name">
+            <input type = "submit" value = "submit">
+        </form>
+
+        <img src="/static/image/icon.svg" alt="check_mark">
+
+        <form action="/add" method="post">
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="body" placeholder="body">
+            <input type="submit" value="Add">
+        </form> 
+
+        {% for onegai in all_onegai %}
+        <p>{{onegai.title}} : {{onegai.body}} {{onegai.date}}</p>
+        {% endfor %}
+    </body>
+</html>
